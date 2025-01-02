@@ -1,0 +1,120 @@
+{% comment %} 
+
+    Image item carousel.
+    This include adds a Bootstrap Carousel component populated with randomly selected image items, designed with index page in mind. 
+    https://getbootstrap.com/docs/5.1/components/carousel/
+
+    E.G. --> {% include index/carousel.html title="Sample Items" height=450 %}
+
+    Options:
+
+    - "height" - the height of the carousel in px, just give the number (optional, default 300)
+    - "title" - card title text inside card content area (optional)
+    - "header" = card header text in bar above card content (optional)
+    - "max" = maximum images selected for slide show (optional, default 9. Do not make too big!)
+    - "btn-color" - a bootstrap color class to theme the buttons. Can be any bootstrap template color (e.g. info, success) or outline (e.g. outline-info, outline-success), including colors created in config-theme-colors. (optional, default "info")
+    - "btn-text" - the label used in the link btn to view the carousel item (optional, default "View Item")
+    
+{%- endcomment -%}
+{% capture functionName %}image_carousel_{{ include.height | append: include.title | append: include.header | default: 'index' | slugify | replace: "-","_" }}{% endcapture %}
+{%- assign carousel-max = include.max | default: 9 -%}
+{%- assign btn-color = include.btn-color | default: "primary" -%}
+{%- assign btn-text = include.btn-text | default: "View Item" -%}
+
+{%- comment -%}
+    Set up carousel div
+{%- endcomment -%}
+<style>
+    #{{ functionName }} .carousel-item { height: {{ include.height | remove: 'px' | strip | default: '300' }}px; }
+</style>
+<div class="card mb-3">
+    {% if include.header %}<h5 class="card-header">{{ include.header }}</h5>{% endif %}
+    <div class="card-body">
+        {% if include.title %}<h5 class="card-title">{{ include.title }}</h5>{% endif %}
+        
+        <div id="{{ functionName }}" class="carousel slide bg-dark rounded mb-3" data-bs-ride="carousel">
+            <div id="{{ functionName }}carouselIndicators" class="carousel-indicators" class="carousel-indicators">
+                
+            </div>
+            <div id="{{ functionName }}carouselInner" class="carousel-inner">
+                
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#{{ functionName }}" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#{{ functionName }}" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+            
+    </div>
+</div>
+{%- comment -%}
+    add slides using JS to allow for randomizing slide show
+{%- endcomment -%}
+<script>
+    // set up feature function variable 
+    var {{ functionName }} = function(cb_items) { 
+        // filter to items with format image or youtubeid
+        {% if site.data.theme.carousel-child-objects == true %}
+        var carouselItems = cb_items.filter(item => (item.youtubeid || item.format.includes("image")) && item.title);
+        {% else %}
+        var carouselItems = cb_items.filter(item => (item.youtubeid || item.format.includes("image")) && !item.parentid);
+        {% endif %}
+        
+        /* shuffle items */
+        carouselItems.sort(function() { return 0.5 - Math.random() });
+    
+        /* set up carousel */
+        var slides = "";
+        var indicators = "";
+        var i;
+        // calculate carousel size
+        if (carouselItems.length > {{ carousel-max }}) {
+            var carousel_size = {{ carousel-max }};
+        } else {
+            var carousel_size = carouselItems.length;
+        }
+        // add items to carousel 
+        for (i=0; i < carousel_size; i++) {
+            // calculate item image location
+            if(carouselItems[i]["youtubeid"]) {
+                itemImg = "https://img.youtube.com/vi/" + carouselItems[i]["youtubeid"] + "/hqdefault.jpg";
+            } else if (carouselItems[i]["filename"].includes("/")) {
+                itemImg = carouselItems[i]["filename"];
+            } else {
+                itemImg = "{{ '/objects/' | relative_url }}" + carouselItems[i]["filename"];
+            }
+            // calculate item link
+            itemLink = carouselItems[i]["parentid"] ? "{{ '/item.html' | relative_url | append: '?id=' }}" + carouselItems[i]["parentid"] + "#" + carouselItems[i]["objectid"] : "{{ '/item.html' | relative_url | append: '?id=' }}" + carouselItems[i]["objectid"];
+            // create indicator 
+            indicator = `<button type="button" data-bs-target="#{{ functionName }}" data-bs-slide-to="${i.toString()}" ${ i == 0 ? 'class="active" aria-current="true" ' : '' }aria-label="Slide ${i.toString()}"></button>`;
+            // create slide
+            slide = `<div class="carousel-item py-2${ i == 0 ? ' active' : '' }">
+            <img class="d-block h-100 mx-auto lazyload" alt="image highlight" data-src="${itemImg}">
+            <div class="carousel-caption">
+                <h5 class="carousel-item-title text-white py-2">${carouselItems[i]["title"]}</h5>
+                <a href="${itemLink}" class="btn btn-sm btn-{{ btn-color }}">{{ btn-text }}</a>
+            </div></div>`;
+            slides += slide;
+            indicators += indicator;
+        }
+        // add indicators to page 
+        var carouselIndicators = document.getElementById("{{ functionName }}carouselIndicators");
+        carouselIndicators.innerHTML = indicators;
+        // add slides to the page
+        var carousel = document.getElementById("{{ functionName }}carouselInner");
+        carousel.innerHTML = slides;
+
+    };
+
+    // add feature function to includeFunctions array
+    if(includeFunctions) {
+        includeFunctions.push({{ functionName }});
+    } else {
+        var includeFunctions = [{{ functionName }}];
+    }
+
+</script>

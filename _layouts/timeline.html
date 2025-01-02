@@ -1,0 +1,22 @@
+---
+# "Timeline" page
+layout: page
+custom-foot: js/timeline-js.html
+---
+<div class="dropdown float-end" id="year-nav">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="yearButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Year
+    </button>
+    <div class="dropdown-menu" aria-labelledby="yearButton" id="navDropYears">
+    </div>
+</div>
+
+{{ content }}
+
+<h3 id="yearRange"></h3>
+
+<table id="timeline" class="table table-striped">
+   <tbody id="timelineBody">
+       
+   </tbody>
+</table>

@@ -1,0 +1,37 @@
+<script>
+
+    // find current configured metadata
+    var cb_metadata_set = sessionStorage.getItem("cb_metadata_set") ? sessionStorage.getItem("cb_metadata_set") : "{{ site.metadata-csv | relative_url }}";
+    // display configured metadata
+    document.getElementById("current-metadata").innerHTML = cb_metadata_set != "" ? cb_metadata_set : "<span class='text-danger h2'>None!</span>";
+    
+    // function for metadata local file form
+    function metadata_file_selector() {
+        // find filename 
+        var fileSelector = document.getElementById("csvFile");
+        var selectedFile = fileSelector.files[0];
+        var selectedFileName = selectedFile.name;
+        // record in session store
+        sessionStorage.setItem("cb_metadata_set",selectedFileName);
+        // remove old session store
+        sessionStorage.removeItem("cb_items_store");
+        // give file to papa parse 
+        cbGetMetadata(selectedFile);
+        // redirect to home
+        window.location.href = "{{ '/' | relative_url }}";
+    }
+    // function for metadata link form
+    function metadata_url_selector() {
+        // file url 
+        var selectedUrl = document.getElementById("csvUrl").value;
+        // record in session store
+        sessionStorage.setItem("cb_metadata_set",selectedUrl);
+        // remove old session store
+        sessionStorage.removeItem("cb_items_store");
+        // give url to papa parse
+        cbGetMetadata(selectedUrl);
+        // redirect to home
+        window.location.href = "{{ '/' | relative_url }}";
+    }
+    
+</script>

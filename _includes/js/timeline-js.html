@@ -1,0 +1,133 @@
+{%- if site.data.theme.icons -%}{% assign icons = site.data.theme.icons %}{% else %}
+{% assign cb_icons = site.pages | where: "name","cb-icons.svg" | first %}
+{% assign icons = cb_icons.icons %}{%- endif -%}
+<script>
+
+function makeCard(obj) {
+    // find images and link
+    // find item link
+    var itemHref = obj.parentid ?  "{{ '/item.html' | relative_url | append: '?id=' }}" + obj.parentid + "#" + obj.objectid : "{{ '/item.html' | relative_url | append: '?id=' }}" + obj.objectid;
+    // find images
+    var thumbSrc;
+    // add images or thumb for objects based on format
+    if(obj.youtubeid) {
+        thumbSrc = 'https://img.youtube.com/vi/' + obj.youtubeid + '/hqdefault.jpg';
+    } else if (obj.format.includes("image")) {
+        if(obj.filename.includes("/")) { 
+            thumbSrc = obj.filename; 
+        } else { 
+            thumbSrc = "{{ '/objects/' | relative_url }}" + obj.filename; 
+        }
+    } else if (obj.format.includes("audio")) {
+        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-audio }}.svg';
+    } else if (obj.format.includes("video")) {
+        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-video }}.svg';  
+    } else if (obj.format.includes("pdf")) {
+        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-pdf }}.svg';
+    } else if (obj.format.includes("record")) {
+        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-record }}.svg';
+    } else if (obj.format.includes("compound")) {
+        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-compound-object }}.svg';
+    } else if (obj.format.includes("multiple")) {
+        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-multiple }}.svg';
+    } else {
+        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-default }}.svg';
+    }  
+    // create card based on type
+    if (obj.youtubeid || obj.format.includes("image")){
+        var card = `<div class="col-lg-4 col-md-6">
+            <a href="${itemHref}">
+                <img class="lazyload img-thumbnail timeline-thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" data-src="${thumbSrc}" alt="${obj.title}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="${obj.title} | ${obj.date}">
+            </a>
+            </div>`;
+    } else {
+        var card = `<div class="col-lg-4 col-md-6">
+            <a href="${itemHref}">
+                <div class="card"> 
+                    <div class="card-body text-center">
+                        <div class="h5 text-dark">${obj.title}</div>
+                        <img class="lazyload w-50" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" data-src="${thumbSrc}" alt="filetype thumbnail">
+                    </div>
+                </div>
+            </a>
+            </div>`;
+    }
+    return card;
+}
+
+var timelinePageInit = function (cb_items) {
+    {% unless site.data.theme.timeline-child-objects == true %}
+    // filter compound objects
+    var cb_items = cb_items.filter(item => !item.parentid);
+    {% endunless %}
+    // get dates from metadata and clean to years
+    clean_years = [];
+    for (var i = 0; i < cb_items.length; i++) {
+        if(cb_items[i].date) { 
+            if(cb_items[i].date.includes("-")) {
+                clean_years.push(cb_items[i].date.trim().split("-")[0]);
+            } else if (cb_items[i].date.includes("/")) {
+                clean_years.push(cb_items[i].date.trim().split("/").reverse()[0]);
+            } else {
+                clean_years.push(cb_items[i].date.trim());
+            }
+        }
+    }
+    // find unique years 
+    unique_years = clean_years.filter(function(value, index, self) { return self.indexOf(value) === index; }).sort((a, b) => a - b);
+
+    document.getElementById("yearRange").innerHTML = `<a href="#y${ unique_years[0] }">${ unique_years[0] }</a> to <a href="#y${ unique_years[unique_years.length - 1] }">${ unique_years[unique_years.length - 1] }</a>`;
+
+    // figure out navYears 
+    var dropYears = "";
+    {%- if site.data.theme.year-navigation -%}
+    var navYears = {{ site.data.theme.year-navigation | split: ";" | jsonify }};
+    {%- else -%}
+    const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
+    if (unique_years.length < 20){
+        var navYears = everyNth(unique_years, 2);
+    }
+    else {
+        var navYears = everyNth(unique_years, 5);
+    }
+    {% endif %}
+    for (var i = 0; i < navYears.length; i++){
+        dropYears += '<a class="dropdown-item" href="#y' + navYears[i] + '">' + navYears[i] + '</a>';
+    }
+    // add nav years dropdown
+    document.getElementById("navDropYears").innerHTML = dropYears;
+    
+    // add navYears to page
+    var yearTable = "";
+    // iterate over unique years 
+    for (var i = 0; i < unique_years.length; i++) {
+        var years = "";
+        // find items for the year
+        var yearItems = cb_items.filter(item => item.date.includes(unique_years[i]));
+        // create cards for each
+        var yearItemCards = "";
+        yearItems.forEach((item) => { yearItemCards += makeCard(item); });
+        // create table row for year
+        var yearRow = `<tr id="y${unique_years[i]}"><th><h3>${unique_years[i]}</h3></th><td><div class="row">${yearItemCards}</div></td></tr>`;
+        // add to var
+        yearTable += yearRow;
+    }
+    document.getElementById("timelineBody").innerHTML = yearTable;
+
+    // init bootstrap tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+    // highlight year if hash
+    if(window.location.hash) {
+        var hashfilter = decodeURIComponent(location.hash.substr(1));
+        document.querySelector("tr#" + hashfilter).classList.add("bg-info");
+    }
+}
+
+// add feature function to includeFunctions array
+includeFunctions.push(timelinePageInit);
+
+</script>

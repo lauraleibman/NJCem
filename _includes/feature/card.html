@@ -1,0 +1,58 @@
+{% comment %}
+
+    Bootstrap Card, https://getbootstrap.com/docs/5.1/components/card/
+
+    E.G. --> {% include feature/card.html text="Some text" header="Example item" objectid="demo_004" %}
+
+    Options:
+    - "text" = main card text, can use markdown formatting (tip: use a Liquid capture to add more complex content)
+    - "header" = card header text (in bar above card content)
+    - "title" = card title text inside card content area
+    - "objectid" = the given object or link to external image will create a card cap image
+    - "alt" = if adding an external image using objectid option, provide alt text for image
+    - "width" = will use responsive sizing to set the % size on desktop (will be 100% on mobile), choose from "25", "50", "75", or "100"
+    - "centered" = give "true" to add mx-auto class on the card to center it 
+
+{%- endcomment -%}
+{% assign functionName = "" %}
+<div class="card mb-3{% if include.width %} feature-w-{{ include.width }}{% endif %}{% if include.centered %} mx-auto{% endif %}">
+{% if include.objectid %}
+    {% if include.objectid contains '/' %}<img class="card-img-top" src="{{ include.objectid | relative_url }}" alt="{{ include.alt | default: include.title }}">{%- else -%}
+    {% capture functionName %}card_feature_{{ include.objectid | slugify | replace: "-","_" }}{% endcapture %}
+    <div id="{{ functionName }}"></div>
+    {% endif %}
+{% endif %}
+    {% if include.header %}<h5 class="card-header">{{ include.header }}</h5>{%- endif -%}
+    <div class="card-body">
+        {% if include.title %}<h5 class="card-title">{{ include.title }}</h5>{%- endif -%}
+        <div class="card-text">{{ include.text | markdownify }}</div>
+    </div>
+</div>
+{% if functionName != "" %}
+<script>
+// set up feature function as variable
+var {{ functionName }} = function (cb_items) { 
+    // find item
+    var record = cb_items.find(item => item.objectid == {{ include.objectid | jsonify }});
+    if (record) {
+        // find file link
+        if (record.filename.includes("/")) {
+            var img_src = record.filename;
+        } else {
+            var img_src = "{{ '/objects/' | relative_url }}" + record.filename;
+        }
+        // add src
+        var img_alt = {% if include.alt %}{{ include.alt | jsonify }}{% else %}record.title{% endif %};
+        document.querySelector("#{{ functionName }}").innerHTML = `<img class="card-img-top" src="${img_src}" alt="${img_alt}">`;
+    } else {
+        // message if objectid doesn't exist
+        document.querySelector("#{{ functionName }}").innerHTML= "<span class='text-danger'>Problem with this card include: image objectid {{ include.objectid }} does not exist.</span>";
+    }
+
+};
+
+// add feature function to includeFunctions array
+includeFunctions.push({{ functionName }});
+
+</script>
+{% endif %}

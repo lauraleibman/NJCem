@@ -1,0 +1,88 @@
+{%- assign fields = site.data.config-search -%}
+{%- assign index_fields = fields | where: 'index','true' -%}
+<script src="{{ '/assets/lib/lunr.min.js' | relative_url }}"></script>
+<script>
+
+/* search function */
+function lunr_search () {
+  var resultdiv = document.querySelector('#lunrResults');
+  var query = document.querySelector('#lunrSearchBox').value;
+  /* basic search that supports operators */
+  var result = idx.search(query); 
+  resultdiv.innerHTML = "";
+  var newresults = '<tr><td><h4 class="mt-3">' + result.length + ' Result(s) found</h4></td></tr>';
+  for (var item in result) {
+    var ref = result[item].ref;
+    var itemHref = cb_items[ref].parentid ?  "{{ '/item.html' | relative_url | append: '?id=' }}" + cb_items[ref].parentid + "#" + cb_items[ref].objectid : "{{ '/item.html' | relative_url | append: '?id=' }}" + cb_items[ref].objectid;
+    var searchitem =
+      '<tr>'+
+          '<td class="">' +
+            {% assign display = fields | where: 'display','true' %}
+            {% for d in display %}
+            {% if forloop.first %}
+            '<p class="h4"><a href="' + itemHref + '">' + cb_items[ref][{{ fields[0].field | jsonify }}]  + '</a></p>' +
+            '<p class="ms-3">';
+              {% else %}
+              if(cb_items[ref][{{ d.field | jsonify }}]) {
+                searchitem += cb_items[ref][{{ d.field | jsonify }}] + '<br> '; }
+              {% endif %}{% endfor %}
+              searchitem += '</p></td>' +
+      '</tr>';
+    newresults += searchitem;
+  }
+  resultdiv.innerHTML = newresults;
+};
+
+/* function to set up lunr store */
+function createIndex(cb_items) {
+  /* initialize lunr */
+  idx = lunr(function () {
+    /* add index fields from config */
+    this.ref('id')
+    {% for f in index_fields %}
+    this.field({{ f.field | jsonify }})
+    {% endfor %}
+
+    for (var item in cb_items) {
+      this.add({
+        {% for f in index_fields %}
+        {{ f.field | jsonify }}: cb_items[item][{{ f.field | jsonify }}],
+        {% endfor %}
+        id: item
+      })
+    }
+  });
+
+}
+
+
+/* page init function */
+var  searchPageInit = function (cb_items) {
+  {% unless site.data.theme.browse-child-objects == true %}
+  // filter compound objects
+  var cb_items = cb_items.filter(item => !item.parentid);
+  {% endunless %}
+  // set up item store
+  for (var item in cb_items) {
+    {% for f in index_fields %}
+    if(cb_items[item][{{ f.field | jsonify }}] == '') { cb_items[item][{{ f.field | jsonify }}] = "none"; }
+    {% endfor %}
+  }
+  // set up lunr store
+  createIndex(cb_items);
+  // get query from url if there
+  if (window.location.search) {
+    var queryString = decodeURIComponent(window.location.search.substring(1).split("=")[1]);
+    document.querySelector('#lunrSearchBox').value = queryString;
+    lunr_search ();
+  }
+
+}
+
+/* varibles for page */
+var idx;
+
+// add feature function to includeFunctions array
+includeFunctions.push(searchPageInit);
+
+</script>

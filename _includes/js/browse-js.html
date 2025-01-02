@@ -1,0 +1,232 @@
+{%- if site.data.theme.icons -%}{% assign icons = site.data.theme.icons %}{% else %}
+{% assign cb_icons = site.pages | where: "name","cb-icons.svg" | first %}
+{% assign icons = cb_icons.icons %}{%- endif -%}
+{%- assign fields = site.data.config-browse -%}
+<script>
+
+/* set some elements */ 
+var loadingIcon = document.querySelector("#loadingIcon");
+var filterTextBox = document.querySelector('#filterTextBox');
+var filterButton = document.querySelector("#filterButton");
+var browseItemsDiv = document.querySelector("#browseItems");
+var query = "";
+var browse_items;
+
+/* function to make each item card on page */
+function makeCard(obj) {
+    // find item link
+    var itemHref = obj.parentid ?  "{{ '/item.html' | relative_url | append: '?id=' }}" + obj.parentid + "#" + obj.objectid : "{{ '/item.html' | relative_url | append: '?id=' }}" + obj.objectid;
+    // find images
+    var imgSrc, thumbSrc;
+    // add images or thumb for objects based on format
+    if(obj.youtubeid) {
+      imgSrc = 'https://img.youtube.com/vi/' + obj.youtubeid + '/hqdefault.jpg';
+    } else if (obj.format.includes("image")) {
+      imgSrc = obj.filename.includes("/") ? obj.filename : "{{ '/objects/' | relative_url }}" + obj.filename;
+    } else if (obj.format.includes("audio")) {
+      thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-audio }}.svg';
+    } else if (obj.format.includes("video")) {
+      thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-video }}.svg';
+    } else if (obj.format.includes("pdf")) {
+      thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-pdf }}.svg';
+    } else if (obj.format.includes("record")) {
+        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-record }}.svg';
+    } else if (obj.format.includes("compound")) {
+        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-compound-object }}.svg';
+    } else if (obj.format.includes("multiple")) {
+        thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-multiple }}.svg';
+    } else {
+      thumbSrc = '{{ "/assets/lib/icons/" | relative_url }}{{ icons.icon-default }}.svg';
+    }  
+    // start card
+    var card = '<div class="item col-lg-4 col-md-6 col-sm-12 mb-2"><div class="card">';
+    // top image for photos
+    if(imgSrc) {
+      card += '<a href="' + itemHref + '"> <img class="card-img-top lazyload" data-src="' + imgSrc + '" alt="Image of ' + obj.title + '"></a>';
+    }
+    // title
+    card += '<div class="card-body text-center"> <h4 class="card-title"><a href="' + itemHref + '" class="text-dark">' + obj.title + '</a></h4>';
+    // thumb for non-photo items
+    if(thumbSrc){
+      card += '<p><a href="' + itemHref + '"><img class="lazyload w-50" data-src="' + thumbSrc + '" alt="Image of ' + obj.title + '"></a></p>';
+    }
+    // other fields
+    card += '<p class="card-text">';
+    {% for f in fields %}{% unless f.hidden == 'true' %}
+    if(obj[{{ f.field | jsonify }}]){
+    {% if f.display_name %}card += '<strong>{{ f.display_name }}:</strong> ';{% endif %}
+    {% if f.btn == 'true' %}
+    var btns = obj[{{ f.field | jsonify }}].split(";");
+    for (var i = 0, len = btns.length; i < len; i++) {
+      if(btns[i] != "") {
+        card += '<a class="btn btn-sm btn-secondary m-1 text-wrap" href="{{ page.url | relative_url }}#' + encodeURIComponent(btns[i].trim()) + '">' + btns[i].trim() + '</a>';
+      }
+    }
+    {% else %}
+    card += obj[{{ f.field | jsonify }}];
+    {% endif %}
+    {% unless forloop.last %}card += '<br>';{% endunless %}
+    }
+    {% endunless %}{% endfor %}
+    card += '</p>';
+    // media type
+    if(obj.format != "") {
+      card += '<p class="card-text"><small><a class="btn btn-sm btn-outline-secondary" href="{{ page.url | relative_url }}#' + encodeURIComponent(obj.format) + '">' + 
+      obj.format.split("/").pop().replace("_", " ").toUpperCase() + ' <svg class="bi icon-sprite"><use xlink:href="{{ "/assets/lib/cb-icons.svg" | relative_url }}#';
+      if(obj.format.includes('image')){
+          card += 'icon-image';
+      } else if(obj.format.includes('audio')){
+          card += 'icon-audio';
+      } else if(obj.format.includes('video')){
+          card += 'icon-video';
+      } else if(obj.format.includes('multiple')){
+          card += 'icon-multiple';
+      } else if(obj.format.includes('compound')){
+          card += 'icon-compound-object';
+      } else {
+          card += 'icon-default';
+      }
+      card += '"></span></a></small></p>';
+    }
+    // view button
+    card += '<hr><a href="' + itemHref + '" class="btn btn-sm btn-light" title="link to ' + obj.title + '">View Full Record</a>';
+    // close divs
+    card += '</div></div></div>';
+    // send back big string
+    return card;
+}
+
+/* Fisher-Yates shuffle https://bost.ocks.org/mike/shuffle/ */
+function shuffle(array) {
+  var m = array.length, t, i;
+  while (m) {
+  i = Math.floor(Math.random() * m--);
+  t = array[m];
+  array[m] = array[i];
+  array[i] = t;
+  }
+  return array;
+}
+
+/* function to filter items to be displayed on browse */
+function filterItems(arr,q) {
+  // show loading icon
+  loadingIcon.classList.remove("d-none");
+  // dont filter if no q 
+  if (q=="") { 
+    var filteredItems = arr; 
+  } else {
+    q = q.trim().toUpperCase(); 
+    // filter items
+    var filteredItems = [];
+    for (var i = 0, len = arr.length; i < len; i++) {
+      // get browse fields from metadata
+      var val = "";
+      if(arr[i]["title"]) { val += arr[i]["title"] + " "; }
+      if(arr[i]["format"]) { val += arr[i]["format"] + " "; }
+      {% for f in fields  %}
+      if(arr[i]["{{ f.field }}"]) { val += arr[i]["{{ f.field }}"] + " "; }
+      {% endfor %}
+      // filter
+      if(val.toUpperCase().indexOf(q) != -1){
+        filteredItems.push(arr[i]);
+      }
+    }
+  }
+  // add number 
+  document.querySelector("#numberOf").innerHTML = filteredItems.length + " of " + arr.length + " items";
+  
+  // add stuff, make cards first in giant var, then add all at once to speed things up
+  var cards = "";
+  for (var i = 0, len = filteredItems.length; i < len; i++) {
+    cards += makeCard(filteredItems[i]);
+  }
+  browseItemsDiv.innerHTML = cards;
+
+  // finish
+  filterButton.focus();
+  loadingIcon.classList.add("d-none");
+};
+
+/* function to init browse after loading items */ 
+var browsePageInit = function (cb_items) {
+  {% unless site.data.theme.browse-child-objects == true %}
+  // filter compound objects
+  var cb_items = cb_items.filter(item => !item.parentid);
+  {% endunless %}
+  /* randomize items once at page load */
+  shuffle(cb_items);
+  /* filter if hash in initial URL */
+  if(window.location.hash) {
+    query = decodeURIComponent(location.hash.substr(1));
+    filterTextBox.value = query;
+    filterItems(cb_items,query);
+  } else {
+    query = "";
+    filterItems(cb_items,query);
+  }
+}
+
+// add feature function to includeFunctions array
+includeFunctions.push(browsePageInit);
+
+/* filter form */
+function submitFilter() {
+    query = filterTextBox.value;
+    window.location.hash = encodeURIComponent(query);
+}
+/* reset filters */ 
+function resetFilter() {
+    query = "";
+    filterTextBox.value = query;
+    window.location.hash = encodeURIComponent(query);
+}
+
+/* filter if hash changes */ 
+window.addEventListener("hashchange", function() {
+    // read hash
+    query = decodeURIComponent(location.hash.substr(1));
+    filterTextBox.value = query;
+    // filter
+    filterItems(cb_items,query);
+});
+
+/* item array sorting function */
+function sorting(json_object, key_to_sort_by) {
+    function sortByKey(a, b) {
+        var x = a[key_to_sort_by];
+        var y = b[key_to_sort_by];
+        if (typeof x === 'string' ) { x = x.toUpperCase(); }
+        if (typeof y === 'string' ) { y = y.toUpperCase(); }
+        return ((x==null) ? 1: (y==null) ? -1: (x < y) ? -1 : ((x > y) ? 1 : 0));
+    }
+    json_object.sort(sortByKey);
+};
+
+/* add sort function on click of sort options */
+var sortFilter = document.querySelector("#sortFilter");
+var sortOptions = document.querySelectorAll(".browse-sort-item");
+sortOptions.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    // get the sort field
+    var field = button.dataset.filter;
+    var display_name = button.textContent;
+    // get current filter
+    var query = filterTextBox.value;
+    // switch active sort option
+    sortOptions.forEach((option) => { option.classList.remove("active"); } );
+    button.classList.add("active");
+    sortFilter.innerHTML = display_name;
+    // send to sort and filter
+    if (field != 'random') {
+        sorting(cb_items, field);
+        filterItems(cb_items, query);
+    }
+    else {
+        shuffle(cb_items);
+        filterItems(cb_items, query);
+    }
+  });
+}); 
+
+</script>

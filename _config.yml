@@ -1,0 +1,70 @@
+##########
+# collectionbuilder-sheets
+# Jekyll Digital Collection Generator, designed for GitHub Pages
+# https://github.com/CollectionBuilder/collectionbuilder-sheets
+##########
+
+##########
+# URL VARIABLES [optional if using GitHub Pages!]
+#
+# url is site domain, full URL to the production location of your collection
+# on GitHub Pages follows the pattern username.github.io
+#url: https://collectionbuilder.github.io 
+# baseurl is path to location on the domain if necessary e.g. /digital/hjccc
+# on GitHub Pages it is your github repository's name prefixed with a /
+#baseurl: /collectionbuilder-gh 
+# location of code, the full url to your github repository
+source-code: https://github.com/CollectionBuilder/collectionbuilder-sheets
+
+##########
+# SITE SETTINGS
+#
+# title of site appears in banner
+title: CollectionBuilder-Sheets
+# tagline, a short phrase that will appear throughout the site in the top banner
+tagline: a template for creating simple digital exhibits
+# description appears in meta tags and other locations
+# this description might appear in search result lists, keep around 160 characters max
+description: "CollectionBuilder-Sheets is a template for creating simple digital exhibit websites by loading collection metadata directly from a CSV, designed for teaching digital library skills."
+# creator of the digital collection, to appear in meta tags; we typically use our GitHub usernames but feel free to just use your name
+author: CollectionBuilder
+
+##########
+# COLLECTION SETTINGS
+#
+# Set the metadata for your collection 
+# This will be the full URL to your CSV file or relative path + filename of CSV in this repository 
+# e.g. relative path "/assets/demo-metadata.csv"
+# e.g. published google sheet "https://docs.google.com/spreadsheets/d/e/2PACX-1vSn7AA-cbsXT3_nNUGftc1ab-CKXOJHMQCIENeR9NHElbyI9_qA99o0-HNZdG04v-M2_N21bUe_krQQ/pub?output=csv"
+# e.g. on GitHub use the raw link "https://raw.githubusercontent.com/CollectionBuilder/collectionbuilder-sample-data/main/psychiana_cbdemo_gh.csv"
+metadata-csv: 
+
+##########
+# Site/Organization Branding 
+# 
+# Uncomment these and enter information for your organization (replacing the CDIL links and name below) if you'd like to brand your site with a logo
+# organization-name: "Center for Digital Inquiry and Learning (CDIL)"
+# organization-link: https://cdil.lib.uidaho.edu/
+# organization-logo-banner: https://cdil.lib.uidaho.edu/storying-extinction/assets/img/cdil.png
+# organization-logo-nav: https://cdil.lib.uidaho.edu/assets/img/logo.png
+
+##########
+# ROBOTS EXCLUDE
+#
+# set noindex to true if you do NOT want Google to index your site
+# noindex: true 
+
+##########
+# BUILD SETTINGS 
+#
+# Note: use environment variable on build command to include analytics
+# JEKYLL_ENV=production jekyll build
+# (this is done automatically by gh-pages build)
+#
+# dev mode turns on ability to change metadata
+development-mode: true
+# ignore stuff
+exclude: [docs/, Rakefile, README.md, LICENSE]
+# compress CSS output
+sass:
+  style: compressed

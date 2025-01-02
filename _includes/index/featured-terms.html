@@ -1,0 +1,98 @@
+{% comment %} 
+
+    Featured Terms button-links.
+    This include creates a card with btn links to the Browse page from a set of automatically generated or manually selected terms. Either use the "field" option to auto generate *or* the "featured" option to manually create list of terms.
+
+    E.G. --> {% include index/featured-terms.html field="subject" title="Top Subjects" btn-color="outline-info" max=8 %}
+
+    E.G. --> {% include index/featured-terms.html featured="Example term; Another; One more" title="Topic Areas" btn-color="success" %}
+
+    Options:
+
+    - "field" - field(s) from your metadata that will be used to auto generate top terms (required to auto generate)
+    - "featured" - a manually created list of featured terms, separated by ; semicolon (required if not auto generating from a field)
+    - "title" - card title text inside card content area (optional)
+    - "header" = card header text in bar above card content (optional)
+    - "max" - max number of terms to display if auto generating (optional, default 5)
+    - "btn-color" - a bootstrap color class to theme the buttons. Can be any bootstrap template color (e.g. info, success) or outline (e.g. outline-info, outline-success), including colors created in config-theme-colors. (optional, default "info")
+    - "stopwords" - list of terms to remove, separated by ";" (optional)
+
+{%- endcomment -%}
+{% capture functionName %}featured_terms_{{ include.field | default: include.featured | slugify | replace: "-","_" }}{% endcapture %}
+<div class="card mb-3">
+    {% if include.header %}<h5 class="card-header">{{ include.header }}</h5>{% endif %}
+    <div class="card-body">
+        {% if include.title %}<h5 class="card-title">{{ include.title }}</h5>{% endif %}
+        <p class="card-text">
+            <div id="{{ functionName }}"></div>
+        </p>
+    </div>
+</div>
+<script>
+    // set up feature function as variable
+    var {{ functionName }} = function (cb_items) { 
+        {% if include.featured %}
+        // featured terms
+        var raw_terms = "{{ include.featured }}".split(";");
+        {% else %}
+        {% if site.data.theme.browse-child-objects == false %}
+        // filter compound objects
+        var cb_items = cb_items.filter(item => !item.parentid);
+        {% endif %}
+        {%- assign cloud-fields = include.field | default: "subject" | split: ";" -%}
+        // get cloud fields from metadata
+        var raw_terms = [];
+        for (var i = 0; i < cb_items.length; i++) {
+            {% for c in cloud-fields %}
+            if(cb_items[i][{{ c | jsonify }}]) { raw_terms.push(cb_items[i][{{ c | jsonify }}]); } 
+            {% endfor %}
+        }
+        {% endif %}
+        // split multivalued fields and clean up extra white space
+        const re = /\s*;+\s*/;
+        var clean_terms = raw_terms.join(";").toLowerCase().split(re);
+        // find unique terms
+        var unique_terms = clean_terms.filter(function(value, index, self) { return self.indexOf(value) === index; });
+        // count unique values 
+        var terms = [];
+        for (var i = 0; i < unique_terms.length; i++) {
+            var count = clean_terms.filter(function(t) { return t == unique_terms[i] }).length;
+            terms.push([unique_terms[i],count]);
+        }
+        {% if stopwords %}/* apply stopwords */
+        var stopWords = {{ stopwords | downcase | split: ';' | jsonify }};
+        terms = terms.filter(function(a) { return stopWords.indexOf(a[0]) < 0;});{% endif %}
+        // sort by count
+        terms.sort(function(a, b){ return b[1] - a[1] });
+        
+        {% if include.max %}
+        // set size
+        if (terms.length > {{ include.max }}) {
+            var cloud_size = {{ include.max }};
+        } else {
+            var cloud_size = terms.length;
+        }
+        {% else %}
+        var cloud_size = terms.length;
+        {% endif %}
+        //
+        // get div
+        var cloud = document.getElementById("{{ functionName }}");
+        // create each term link
+        var cloud_items = "";
+        for (i = 0; i < cloud_size; i++) {
+            cloud_items += '<a class="btn btn-{{ include.btn-color | default: "info" }} m-1" href="{{ "/browse.html" | relative_url }}#' + encodeURIComponent(terms[i][0]) + '" >' + terms[i][0] + '</a>';
+        }
+        // add to card div
+        cloud.innerHTML = cloud_items;
+
+    };
+
+    // add feature function to includeFunctions array
+    if(includeFunctions) {
+        includeFunctions.push({{ functionName }});
+    } else {
+        var includeFunctions = [{{ functionName }}];
+    }
+
+</script>

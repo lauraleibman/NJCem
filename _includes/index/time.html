@@ -1,0 +1,47 @@
+{% capture functionName %}collection_time_span{% endcapture %}
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">Time Span</h5>
+        <p class="card-text h5"><span id="{{ functionName }}"></span>
+        <br/><a href="{{ '/timeline.html' | relative_url }}" class="btn btn-sm btn-outline-secondary mt-2">View Timeline</a>
+        </p>
+    </div>
+</div>
+<script>
+    // set up feature function as variable
+    var {{ functionName }} = function (cb_items) {
+        {% if site.data.theme.timeline-child-objects == false %}
+        // filter compound objects
+        var cb_items = cb_items.filter(item => !item.parentid);
+        {% endif %}
+        // get dates and clean to years
+        var item_years = cb_items.map(obj => { 
+            var d = obj["date"].trim();
+            var year = "";
+            if (d.includes("-")) {
+                year = d.split("-")[0];
+            } else if (d.includes("/")) {
+                year = d.split("/").slice(-1);
+            } else {
+                year = d;
+            }
+            return parseInt(year);
+        });
+        // find start and end years
+        var clean_years = item_years.filter(Boolean);
+        var start_year = Math.min(...clean_years);
+        var end_year = Math.max(...clean_years);
+        // add to page
+        document.getElementById("{{ functionName }}").innerHTML = start_year + "  to " + end_year;
+
+    };
+
+    
+    // add feature function to includeFunctions array
+    if(includeFunctions) {
+        includeFunctions.push({{ functionName }});
+    } else {
+        var includeFunctions = [{{ functionName }}];
+    }
+
+</script>
