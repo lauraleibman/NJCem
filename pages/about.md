@@ -10,12 +10,26 @@ credits: true
 
 {% include feature/jumbotron.html objectid="/assets/img/jj-ying-WmnsGyaFnCQ-unsplash_opt.jpg" %}
 
-## About CollectionBuilder-Sheets
+## About Collection
+
+Welcome to the demo collection for AMS 387/ REL 374  American Dead and Undead (Princeton University, Spring 2025). This site provides sample gravestones from New Jersey Cemeteries from the colonial era to the present as well as a platform where your Collection Builder Exhibits on the Princeton Cemetery will will reside.
+
+# Cemeteries:
+Old Colonial Cemetery of Metuchen Metuchen, Middlesex County, New Jersey, USA
+Saint Peters Churchyard, Perth Amboy, Middlesex County, New Jersey, USA
+
+## Gravestone Resources
+- Farber Gravestone Collection
+- Indian Converts Collection
+- Jewish Atlantic World Database: by Cemetery; by name of deceased
+- New Jersey Gravestones
+
+
+## More on Collection Builder
 
 This site is generated using [CollectionBuilder-Sheets](https://github.com/CollectionBuilder/collectionbuilder-sheets), a template  for creating simple digital exhibit websites by loading collection metadata directly from a CSV, designed for teaching digital library skills and easy hosting on GitHub Pages.
 
-Using CB-Sheets, it is possible to use a live Google Sheets spreadsheet for your collection metadata, allowing you to see the outcome of metadata edits update immediately.
-This enables active collaboration to prototype collections with minimal set up.
+
 
 <button class="btn btn-lg btn-success" data-bs-toggle="modal" data-bs-target="#cbSetUpModal">
     <svg class="bi icon-sprite" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
