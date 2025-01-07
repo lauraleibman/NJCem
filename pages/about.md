@@ -20,9 +20,9 @@ Welcome to the demo collection for AMS 387/ REL 374  American Dead and Undead (P
 
 ## Gravestone Resources
 - [Farber Gravestone Collection](https://www.davidrumsey.com/farber/)
-- Indian Converts Collection
-- Jewish Atlantic World Database: by Cemetery; by name of deceased
-- New Jersey Gravestones
+- [Indian Converts Collection](https://rdc.reed.edu/c/colhist/home/)
+- [Jewish Atlantic World Database](https://rdc.reed.edu/c/jewishatl/home/): by [Cemetery](https://rdc.reed.edu/c/jewishatl/home/cemetery-location); by [name of deceased](https://rdc.reed.edu/c/jewishatl/home/firstname)
+
 
 
 ## More on Collection Builder
