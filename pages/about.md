@@ -14,7 +14,7 @@ credits: true
 
 Welcome to the demo collection for AMS 387/ REL 374  American Dead and Undead (Princeton University, Spring 2025). This site provides sample gravestones from New Jersey Cemeteries from the colonial era to the present as well as a platform where your Collection Builder Exhibits on the Princeton Cemetery will will reside.
 
-# Cemeteries:
+## Cemeteries:
 - Old Colonial Cemetery of Metuchen Metuchen, Middlesex County, New Jersey, USA
 - Saint Peters Churchyard, Perth Amboy, Middlesex County, New Jersey, USA
 
