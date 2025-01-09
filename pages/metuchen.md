@@ -8,7 +8,7 @@ credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
 
-{% include feature/image.html objectid="coll009" width="75" %}
+{% include feature/image.html objectid="coll006" width="75" %}
 
 ## About Old Colonial Cemetery of Metuchen
 Old Colonial Cemetery of Metuchen was established between 1715-1730. It is the burying ground associated with Metuchen's Presbyterian Church.  
