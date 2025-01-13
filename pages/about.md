@@ -8,7 +8,7 @@ credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
 
-{{% include feature/jumbotron.html objectid="https://lauraleibman.github.io/NJCem/item.html?id=coll014" %}
+{% include feature/jumbotron.html objectid="https://digital.lib.utk.edu/iiif/2/collections~islandora~object~wcc%3A268~datastream~JP2/60,1965,5275,1326/full/0/default.jpg" %}}
 
 ## About Collection
 
