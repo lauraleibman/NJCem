@@ -6,9 +6,9 @@ Locations,/locations.html
 Map,/map.html
 Timeline,/timeline.html
 Data,/data.html
-About,/about.html,
+About,/about.html
+Carvers,/carvers.html,
 display_text,stub,dropdown_parent
-Carvers
 Cemeteries,,
 Old Colonial Cemetery of Metuchen,/metuchen.html,Cemeteries
 Cemeteries,/cemeteries.html,Cemeteries
