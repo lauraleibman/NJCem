@@ -12,16 +12,17 @@ credits: true
 
 ## About Carvers
 
-Although some of teh stones in this collection 
+Carvers are typically identified either by signed stones or a distinctive style. Early New Jersey Carvers are typically broken into four carving traditions: sandstone carving tradition, German carving tradition, Dutch carving tradition and a Philadelphia tradition (Veit and Nonestied 2008:38). Ebenezer Prince is one of the most prolific members of the sandstone tradition. The Dutch tradition tends to focus around Berger County, and not surprisingly the inscriptions are often in Dutch. German carvers are mainly found in northwest New Jersey and often have stars, suns, moons tuplips and hearts. A subset of this tradition are the Moravian carvers. The work of Phialdelphia style carvers are mainly found in southern New Jersey, and often uses a white to a striated blue/gray marble without any decoration (Veit and Nonestied 2011). In addition to buying stones made by New Jerseyn New Jersey, some residents bought stones from neighboring areas, such as the work of William Stevens from the [Stephens Shop](https://www.johnstevensshop.com/) in Newport, RI. Click [here](https://ripnewport.com/carvers.html) for more on the Stevens Shop Carvers.
 
 ## Carvers
 - [Jonathan Hand Osbourne, Scotch Plains, NJ](https://lauraleibman.github.io/NJCem/browse.html#jonathan%20hand%20osborn)
-- [William Stephens, Newport RI](https://lauraleibman.github.io/NJCem/browse.html#william%20stevens%20(1710-1790)%2C%20newport%2C%20ri)
+- [William Stevens, Newport RI](https://lauraleibman.github.io/NJCem/browse.html#william%20stevens%20(1710-1790)%2C%20newport%2C%20ri)
 - 
 
-## Carvers Resources
-- [Nonesteid and Veit, Carrying On the Stone Cutting Business, 2011](Nonesteid and Veit in their fascinating 2011 publication, Carrying On the Stone Cutting Busines)
-- [Gravestone Carvers Active in New Jersey]([https://rdc.reed.edu/c/colhist/home/](https://www.degruyter.com/document/doi/10.36019/9780813545660-015/html?lang=en&srsltid=AfmBOopzrob1MYLjg19dIk_auhhMRHby6nmTK9yhOvx5eGsqOKESiQ5o))
-- [Ebeneezer Price, Colonial-era Gravestone Carver]([https://rdc.reed.edu/c/jewishatl/home/](https://thecemeterytraveler.blogspot.com/2016/08/ebeneezer-price-colonial-era-gravestone.html))
+## New Jersey Carvers Resources
+- [Nonesteid and Veit, Carrying On the Stone Cutting Business, 2011](https://gardenstatelegacy.com/files/Carrying_on_the_Stone_Cutting_Business_Nonestied_Veit_GSL11.pdf)
+- [Gravestone Carvers Active in New Jersey]([https://rdc.reed.edu/c/colhist/home/](https://www.degruyter.com/document/doi/10.36019/9780813545660-015/html?lang=en&srsltid=AfmBOopzrob1MYLjg19dIk_auhhMRHby6nmTK9yhOvx5eGsqOKESiQ5o)
+- [Ebeneezer Price, Colonial-era Gravestone Carver]([https://rdc.reed.edu/c/jewishatl/home/](https://thecemeterytraveler.blogspot.com/2016/08/ebeneezer-price-colonial-era-gravestone.html)
+- [Jonathan Hand Osborn: Stonecutter](https://barbaradschaffer.blogspot.com/2013/08/jonathan-hand-osborn-stonecutter.html)
 ---
 
