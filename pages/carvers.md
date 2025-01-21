@@ -8,7 +8,7 @@ credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
 
-{% include feature/image.html objectid="coll012" %}
+{% include feature/image.html objectid="coll011" %}
 
 ## About Carvers
 
