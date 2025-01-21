@@ -27,7 +27,7 @@ Carvers are typically identified either by signed stones or a distinctive style.
 - [Nonesteid and Veit, Carrying On the Stone Cutting Business, 2011](https://gardenstatelegacy.com/files/Carrying_on_the_Stone_Cutting_Business_Nonestied_Veit_GSL11.pdf)
 - [Gravestone Carvers Active in New Jersey](https://www.degruyter.com/document/doi/10.36019/9780813545660-015/html?lang=en&srsltid=AfmBOor9i7XLgGFk8PsGmJdH4AnzdwjRJ8ZkG37yvnfNZ2O7WGY5YYyO)
 - [The Old Presbyterian Graveyard Bound Brook, New Jersey](The Old Presbyterian Graveyard Bound Brook, New Jersey). Includes good information about early carvers and also a diagram of the parts of a gravestone
-- 
+- [Adam R. Heinrich, “'Remember Me…' But 'Be Mindfull of Death':The Artistic, Social, and Personal Choice Expressions Observed on the Gravemarkers of Eighteenth Century Monmouth County, New Jersey."](https://njh.libraries.rutgers.edu/index.php/njh/article/download/1103/2551/5711)
 - 
 ---
 
