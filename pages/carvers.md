@@ -12,17 +12,22 @@ credits: true
 
 ## About Carvers
 
-Carvers are typically identified either by signed stones or a distinctive style. Early New Jersey Carvers are typically broken into four carving traditions: sandstone carving tradition, German carving tradition, Dutch carving tradition and a Philadelphia tradition (Veit and Nonestied 2008:38). Ebenezer Prince is one of the most prolific members of the sandstone tradition. The Dutch tradition tends to focus around Berger County, and not surprisingly the inscriptions are often in Dutch. German carvers are mainly found in northwest New Jersey and often have stars, suns, moons tuplips and hearts. A subset of this tradition are the Moravian carvers. The work of Phialdelphia style carvers are mainly found in southern New Jersey, and often uses a white to a striated blue/gray marble without any decoration (Veit and Nonestied 2011). In addition to buying stones made by New Jerseyn New Jersey, some residents bought stones from neighboring areas, such as the work of William Stevens from the [Stephens Shop](https://www.johnstevensshop.com/) in Newport, RI. Click [here](https://ripnewport.com/carvers.html) for more on the Stevens Shop Carvers.
+Carvers are typically identified either by signed stones or a distinctive style. Early New Jersey Carvers are typically broken into four carving traditions: sandstone carving tradition, German carving tradition, Dutch carving tradition and a Philadelphia tradition (Veit and Nonestied 2008:38). Ebenezer Prince is one of the most prolific members of the sandstone tradition. The Dutch tradition tends to focus around Berger County, and not surprisingly the inscriptions are often in Dutch. German carvers are mainly found in northwest New Jersey and often have stars, suns, moons tulips and hearts. A subset of this tradition are the Moravian carvers. The work of Phialdelphia style carvers are mainly found in southern New Jersey, and often uses a white to a striated blue/gray marble without any decoration (Veit and Nonestied 2011). In addition to buying stones made by New Jerseyn New Jersey, some residents bought stones from neighboring areas, such as the work of William Stevens from the [Stephens Shop](https://www.johnstevensshop.com/) in Newport, RI. Click [here](https://ripnewport.com/carvers.html) for more on the Stevens Shop Carvers.
 
 ## Carvers
-- [Jonathan Hand Osbourne, Scotch Plains, NJ](https://lauraleibman.github.io/NJCem/browse.html#jonathan%20hand%20osborn)
-- [William Stevens, Newport RI](https://lauraleibman.github.io/NJCem/browse.html#william%20stevens%20(1710-1790)%2C%20newport%2C%20ri)
-- 
+-Jonathan Hand Osborn (1760-1846), Scotch Plains, NJ [Jonathan Hand Osbourne stones in this collection](https://lauraleibman.github.io/NJCem/browse.html#jonathan%20hand%20osborn). More on [Jonathan Hand Osborn: Stonecutter](https://barbaradschaffer.blogspot.com/2013/08/jonathan-hand-osborn-stonecutter.html)
+- Ebenezer Price (1728-1788), Elizabethtown, NJ [Ebeneezer Price, Colonial-era Gravestone Carver]([https://rdc.reed.edu/c/jewishatl/home/](https://thecemeterytraveler.blogspot.com/2016/08/ebeneezer-price-colonial-era-gravestone.html)
+- Uzal Ward, Newark, NJ
+- John Frazee, Rahway, New Brunswick, NJ
+- Anonymous "Rounded Pear Head” carver
+- Anonymous "Grinch" carver
+- William Stevens, Newport RI [William Stevens stones in this collection](https://lauraleibman.github.io/NJCem/browse.html#william%20stevens%20(1710-1790)%2C%20newport%2C%20ri)
 
 ## New Jersey Carvers Resources
 - [Nonesteid and Veit, Carrying On the Stone Cutting Business, 2011](https://gardenstatelegacy.com/files/Carrying_on_the_Stone_Cutting_Business_Nonestied_Veit_GSL11.pdf)
 - [Gravestone Carvers Active in New Jersey]([https://rdc.reed.edu/c/colhist/home/](https://www.degruyter.com/document/doi/10.36019/9780813545660-015/html?lang=en&srsltid=AfmBOopzrob1MYLjg19dIk_auhhMRHby6nmTK9yhOvx5eGsqOKESiQ5o)
-- [Ebeneezer Price, Colonial-era Gravestone Carver]([https://rdc.reed.edu/c/jewishatl/home/](https://thecemeterytraveler.blogspot.com/2016/08/ebeneezer-price-colonial-era-gravestone.html)
-- [Jonathan Hand Osborn: Stonecutter](https://barbaradschaffer.blogspot.com/2013/08/jonathan-hand-osborn-stonecutter.html)
+- [The Old Presbyterian Graveyard Bound Brook, New Jersey](The Old Presbyterian Graveyard Bound Brook, New Jersey ). Includes good information about early carvers and also a diagram of the parts of a gravestone
+- 
+- 
 ---
 
