@@ -16,7 +16,7 @@ Carvers are typically identified either by signed stones or a distinctive style.
 
 ## Carvers
 - Jonathan Hand Osborn (1760-1846), Scotch Plains, NJ [Jonathan Hand Osborn stones in this collection](https://lauraleibman.github.io/NJCem/browse.html#jonathan%20hand%20osborn). More on [Jonathan Hand Osborn: Stonecutter](https://barbaradschaffer.blogspot.com/2013/08/jonathan-hand-osborn-stonecutter.html)
-- Ebenezer Price (1728-1788), Elizabethtown, NJ [Ebeneezer Price, Colonial-era Gravestone Carver]([https://rdc.reed.edu/c/jewishatl/home/](https://thecemeterytraveler.blogspot.com/2016/08/ebeneezer-price-colonial-era-gravestone.html)
+- Ebenezer Price (1728-1788), Elizabethtown, NJ [Ebeneezer Price, Colonial-era Gravestone Carver](https://thecemeterytraveler.blogspot.com/2016/08/ebeneezer-price-colonial-era-gravestone.html)
 - Uzal Ward, Newark, NJ
 - John Frazee, Rahway, New Brunswick, NJ
 - Anonymous "Rounded Pear Head” carver
