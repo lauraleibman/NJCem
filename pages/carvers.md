@@ -22,7 +22,7 @@ Carvers are typically identified either by signed stones or a distinctive style.
 - Anonymous "Rounded Pear Head” carver
 - Anonymous "Grinch" carver
 - Stevens Shop, Newport RI
--- William Stevens, Newport RI [William Stevens stones in this collection](https://lauraleibman.github.io/NJCem/browse.html#william%20stevens%20(1710-1790)%2C%20newport%2C%20ri)
+- - William Stevens, Newport RI [William Stevens stones in this collection](https://lauraleibman.github.io/NJCem/browse.html#william%20stevens%20(1710-1790)%2C%20newport%2C%20ri)
 
 ## New Jersey Carvers Resources
 - [Nonesteid and Veit, Carrying On the Stone Cutting Business, 2011](https://gardenstatelegacy.com/files/Carrying_on_the_Stone_Cutting_Business_Nonestied_Veit_GSL11.pdf)
