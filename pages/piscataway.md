@@ -20,6 +20,6 @@ The Piscatawaytown Burial Ground if one of the earliest cemeteries in Middlesex 
 - [Jonathan Hand Osborn](https://lauraleibman.github.io/NJCem/browse.html#Jonathan%20Hand%20Osborn%20Carver)
 - [Stevens Shop]
 
-## Old Colonial Cemetery of Metuchen Resources
+## Piscatawaytown Burial Ground Resources
 - [Findagrave Saint James Episcopal Church Cemetery. Also known as Piscatawaytown Burial Ground, White Church Cemetery]([https://www.findagrave.com/cemetery/2215246/old-colonial-cemetery-of-metuchen](https://www.findagrave.com/cemetery/423331/saint-james-episcopal-church-cemetery))
 - [Metuchen-Edison Historical Society, "Piscataway Burial Ground"](http://metuchen-edisonhistsoc.org/resources/Piscatawaytown1.pdf)
