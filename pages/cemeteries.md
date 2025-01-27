@@ -16,7 +16,7 @@ The cemeteries featured in this collection have been chosen to provide insights 
 
 ## Cemeteries:
 - [Old Colonial Cemetery of Metuchen Metuchen, Middlesex County, New Jersey, USA](/cemeteries/metuchen.html)
-- [Piscatawaytown Burial Ground, Edison, Middlesex, New Jersey, USA]
+- [Piscatawaytown Burial Ground, Edison, Middlesex, New Jersey, USA](/cemeteries/piscataway.html)
 - [Princeton Cemetery of Nassau Presbyterian Church, Princeton, Mercer County, New Jersey, USA]
 - [Saint Peters Churchyard, Perth Amboy, Middlesex County, New Jersey, USA](https://lauraleibman.github.io/NJCem/browse.html#Saint%20Peters%20Churchyard%20Cemetery)
 - [Stony Brook Quaker Meeting House Burial Ground, Princeton, Mercer County, New Jersey, USA](https://lauraleibman.github.io/NJCem/browse.html#Stony%20Brook%20Quaker%20Meeting%20House%20Burial%20Ground)
