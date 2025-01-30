@@ -1,6 +1,6 @@
 ---
 title: Piscatawaytown Burial Ground, aka Saint James Episcopal Church Cemetery
-layout: about
+layout: item
 permalink: /piscataway.html
 # include CollectionBuilder info at bottom
 credits: true
@@ -8,7 +8,7 @@ credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
 
-{% include feature/image.html objectid="coll013" width="75" %}
+{% include feature/image.html objectid="coll014" width="75" %}
 
 ## About Piscatawaytown Burial Ground, aka Saint James Episcopal Church Cemetery
 The Piscatawaytown Burial Ground if one of the earliest cemeteries in Middlesex County, NJ, with the oldest legible stone dating to 1693. Important Burials include Mary Moore (a witch), and soldiers from the American Revolution and Civil War]. This burial ground contains a disproportionately high number of stones from the Stevens Shop (Newport, RI). This is due in part to the immigration of people form Newport to New Jersey, however is also due to the influence of the Stelle family who had relatives in Newport (Veit and Nonstied 2008: 60).
