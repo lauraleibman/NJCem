@@ -1,6 +1,6 @@
 ---
 title: Piscatawaytown Burial Ground, aka Saint James Episcopal Church Cemetery
-layout: item
+layout: data
 permalink: /piscataway.html
 # include CollectionBuilder info at bottom
 credits: true
