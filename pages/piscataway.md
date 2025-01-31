@@ -18,7 +18,8 @@ The Piscatawaytown Burial Ground if one of the earliest cemeteries in Middlesex 
 
 ## Carvers
 - [Jonathan Hand Osborn](https://lauraleibman.github.io/NJCem/browse.html#Jonathan%20Hand%20Osborn%20Carver)
-- [Stevens Shop]
+- [Stevens Shop] (https://lauraleibman.github.io/NJCem/search/index.html?q=Stevens%20shop)
+- - [William Stevens] (https://lauraleibman.github.io/NJCem/browse.html#William%20Stevens)
 
 ## Piscatawaytown Burial Ground Resources
 - [Findagrave Saint James Episcopal Church Cemetery. Also known as Piscatawaytown Burial Ground, White Church Cemetery] (https://www.findagrave.com/cemetery/423331/saint-james-episcopal-church-cemetery))
