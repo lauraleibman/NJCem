@@ -22,5 +22,5 @@ The Piscatawaytown Burial Ground if one of the earliest cemeteries in Middlesex 
 - - [William Stevens] (https://lauraleibman.github.io/NJCem/browse.html#William%20Stevens)
 
 ## Piscatawaytown Burial Ground Resources
-- [Findagrave Saint James Episcopal Church Cemetery. Also known as Piscatawaytown Burial Ground, White Church Cemetery] (https://www.findagrave.com/cemetery/423331/saint-james-episcopal-church-cemetery))
+- [Findagrave Saint James Episcopal Church Cemetery. Also known as Piscatawaytown Burial Ground, White Church Cemetery](https://www.findagrave.com/cemetery/423331/saint-james-episcopal-church-cemetery))
 - [Metuchen-Edison Historical Society, "Piscataway Burial Ground"](http://metuchen-edisonhistsoc.org/resources/Piscatawaytown1.pdf)
