@@ -14,7 +14,7 @@ credits: true
 The Piscatawaytown Burial Ground if one of the earliest cemeteries in Middlesex County, NJ, with the oldest legible stone dating to 1693. Important Burials include Mary Moore (a witch), and soldiers from the American Revolution and Civil War]. This burial ground contains a disproportionately high number of stones from the Stevens Shop (Newport, RI). This is due in part to the immigration of people form Newport to New Jersey, however is also due to the influence of the Stelle family who had relatives in Newport (Veit and Nonstied 2008: 60).
 
 ## Gravestones
-- [Selected Gravestones in This Collection from The Piscatawaytown Burial Ground](https://lauraleibman.github.io/NJCem/search/index.html?q=piscataway)
+- [Selected Gravestones in This Collection from The Piscatawaytown Burial Ground](https://lauraleibman.github.io/NJCem/search/index.html?q=piscatawaytown)
 
 ## Carvers
 - [Jonathan Hand Osborn](https://lauraleibman.github.io/NJCem/browse.html#Jonathan%20Hand%20Osborn%20Carver)
