@@ -4,12 +4,12 @@ layout: about
 permalink: /dead-projects.html
 # include CollectionBuilder info at bottom
 credits: true
-# Edit the markdown on in this file to describe your collection
+# Edit the markdown on in this file to add a link to your project page
 # Look in _includes/feature for options to easily add features to the page
 ---
 
 {% include feature/image.html objectid="coll018" %}
-Instructions: Edit this page in github. Select your name. Add a link to your project page
+
 ## Dead Projects
 - Sophia Augustin
 - Sarah Burbank-Embry
