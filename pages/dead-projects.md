@@ -8,7 +8,7 @@ credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
 
-{% include feature/image.html objectid="coll018" %}
+{% include feature/image.html objectid="coll028" %}
 
 ## Dead Projects
 - Sophia Augustin
