@@ -27,4 +27,4 @@ The cemeteries featured in this collection have been chosen to provide insights 
 - [Jewish Atlantic World Database](https://rdc.reed.edu/c/jewishatl/home/)
 1. [browse by Cemetery](https://rdc.reed.edu/c/jewishatl/home/cemetery-location)
 1. [browse by name of deceased](https://rdc.reed.edu/c/jewishatl/home/firstname)
----
+
