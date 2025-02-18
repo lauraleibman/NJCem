@@ -25,6 +25,6 @@ The cemeteries featured in this collection have been chosen to provide insights 
 - [Farber Gravestone Collection](https://www.davidrumsey.com/farber/)
 - [Indian Converts Collection](https://rdc.reed.edu/c/colhist/home/)
 - [Jewish Atlantic World Database](https://rdc.reed.edu/c/jewishatl/home/)
-- - [browse by Cemetery](https://rdc.reed.edu/c/jewishatl/home/cemetery-location)
-- - [browse by name of deceased](https://rdc.reed.edu/c/jewishatl/home/firstname)
+1. [browse by Cemetery](https://rdc.reed.edu/c/jewishatl/home/cemetery-location)
+1. [browse by name of deceased](https://rdc.reed.edu/c/jewishatl/home/firstname)
 ---
