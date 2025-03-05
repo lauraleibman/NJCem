@@ -24,3 +24,4 @@ credits: true
 - Connor Odom
 - Cristina Parrella
 - Benjamin Woodard
+- [Butchie the Pet - an example](https://lauraleibman.github.io/NJCem/search/index.html?q=butchie)
