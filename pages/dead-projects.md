@@ -22,6 +22,6 @@ credits: true
 - Donaji Mendieta-Silva
 - [Jenna Mullin](https://lauraleibman.github.io/NJCem/search/index.html?q=Mullin)
 - Connor Odom
-- Cristina Parrella
+- [Cristina Parrella] (https://lauraleibman.github.io/NJCem/search/index.html?q=parrella)
 - [Benjamin Woodard](https://lauraleibman.github.io/NJCem/browse.html#Woodard)
 - [Butchie the Pet - an example](https://lauraleibman.github.io/NJCem/search/index.html?q=butchie)
