@@ -23,5 +23,5 @@ credits: true
 - Jenna Mullin
 - Connor Odom
 - Cristina Parrella
-- Benjamin Woodard
+- [Benjamin Woodard](https://lauraleibman.github.io/NJCem/browse.html#Woodard)
 - [Butchie the Pet - an example](https://lauraleibman.github.io/NJCem/search/index.html?q=butchie)
