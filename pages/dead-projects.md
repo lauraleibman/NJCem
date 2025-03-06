@@ -18,7 +18,7 @@ credits: true
 - Gabriel Higbee
 - Olivia Hutcherson
 - Amaya Jimenez
-- [Macy Kwon]https://lauraleibman.github.io/NJCem/search/index.html?q=kwon 
+- [Macy Kwon] (https://lauraleibman.github.io/NJCem/search/index.html?q=kwon)
 - Donaji Mendieta-Silva
 - [Jenna Mullin](https://lauraleibman.github.io/NJCem/search/index.html?q=Mullin)
 - Connor Odom
