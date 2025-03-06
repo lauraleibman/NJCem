@@ -20,7 +20,7 @@ credits: true
 - Amaya Jimenez
 - Macy Kwon
 - Donaji Mendieta-Silva
-- Jenna Mullin
+- [Jenna Mullin](https://lauraleibman.github.io/NJCem/search/index.html?q=Mullin)
 - Connor Odom
 - Cristina Parrella
 - [Benjamin Woodard](https://lauraleibman.github.io/NJCem/browse.html#Woodard)
