@@ -14,7 +14,7 @@ credits: true
 - Sophia Augustin
 - Sarah Burbank-Embry
 - Michael Emperor
-- Meghan Harrington
+- [Meghan Harrington] (https://lauraleibman.github.io/NJCem/search/index.html?q=harrington)
 - Gabriel Higbee
 - Olivia Hutcherson
 - Amaya Jimenez
