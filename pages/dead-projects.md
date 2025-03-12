@@ -17,7 +17,7 @@ credits: true
 - [Meghan Harrington](https://lauraleibman.github.io/NJCem/search/index.html?q=harrington)
 - Gabriel Higbee
 - Olivia Hutcherson
-- Amaya Jimenez
+- [Amaya Jimenez](https://lauraleibman.github.io/NJCem/search/index.html?q=jimenez)
 - [Macy Kwon](https://lauraleibman.github.io/NJCem/search/index.html?q=kwon)
 - Donaji Mendieta-Silva
 - [Jenna Mullin](https://lauraleibman.github.io/NJCem/search/index.html?q=Mullin)
