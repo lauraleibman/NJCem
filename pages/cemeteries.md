@@ -1,6 +1,6 @@
 ---
 title: Cemeteries
-layout: about
+layout: page
 permalink: /cemeteries.html
 # include CollectionBuilder info at bottom
 credits: true
