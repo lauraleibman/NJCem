@@ -1,6 +1,6 @@
 ---
 title: Gravestone Carvers
-layout: about
+layout: page
 permalink: /carvers.html
 # include CollectionBuilder info at bottom
 credits: true
