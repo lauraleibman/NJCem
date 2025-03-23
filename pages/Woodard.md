@@ -4,4 +4,4 @@ layout: about
 permalink: /woodard.html
 ---
 
-## Minister's Gravestones in the Princeton Cemetery
+## Ministers' Gravestones in the Princeton Cemetery
