@@ -23,5 +23,5 @@ credits: true
 - [Jenna Mullin](https://lauraleibman.github.io/NJCem/search/index.html?q=Mullin)
 - Connor Odom
 - [Cristina Parrella](https://lauraleibman.github.io/NJCem/search/index.html?q=parrella)
-- [Benjamin Woodard](https://lauraleibman.github.io/NJCem/Woodard.html)
+- [Benjamin Woodard](https://lauraleibman.github.io/NJCem/woodard.html)
 - [Butchie the Pet - an example](https://lauraleibman.github.io/NJCem/search/index.html?q=butchie)
