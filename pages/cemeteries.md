@@ -20,6 +20,7 @@ The cemeteries featured in this collection have been chosen to provide insights 
 - [Princeton Cemetery of Nassau Presbyterian Church, Princeton, Mercer County, New Jersey, USA](https://lauraleibman.github.io/NJCem/search/index.html?q=princeton%20)
 - [Saint Peters Churchyard, Perth Amboy, Middlesex County, New Jersey, USA](https://lauraleibman.github.io/NJCem/browse.html#Saint%20Peters%20Churchyard%20Cemetery)
 - [Stony Brook Quaker Meeting House Burial Ground, Princeton, Mercer County, New Jersey, USA](https://lauraleibman.github.io/NJCem/browse.html#Stony%20Brook%20Quaker%20Meeting%20House%20Burial%20Ground)
+- [Old Dutch Churchyard, Kingston, Ulster County, New York, USA](https://lauraleibman.github.io/NJCem/search/index.html?q=burbank)
 
 ## Gravestone Resources
 - [Farber Gravestone Collection](https://www.davidrumsey.com/farber/)
