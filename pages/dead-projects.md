@@ -12,7 +12,7 @@ credits: true
 
 ## Dead Projects
 - Sophia Augustin
-- Sarah Burbank-Embry
+- [Sarah Burbank](https://lauraleibman.github.io/NJCem/search/index.html?q=burbank)
 - [Michael Emperor](https://lauraleibman.github.io/NJCem/search/index.html?q=Emperor)
 - [Meghan Harrington](https://lauraleibman.github.io/NJCem/search/index.html?q=harrington)
 - Gabriel Higbee
