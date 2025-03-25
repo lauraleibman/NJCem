@@ -19,7 +19,7 @@ credits: true
 - Olivia Hutcherson
 - [Amaya Jimenez](https://lauraleibman.github.io/NJCem/search/index.html?q=jimenez)
 - [Macy Kwon](https://lauraleibman.github.io/NJCem/search/index.html?q=kwon)
-- Donaji Mendieta-Silva
+- [Donaji Mendieta-Silva](https://lauraleibman.github.io/NJCem/search/index.html?q=Mendieta-Silva) 
 - [Jenna Mullin](https://lauraleibman.github.io/NJCem/search/index.html?q=Mullin)
 - Connor Odom
 - [Cristina Parrella](https://lauraleibman.github.io/NJCem/search/index.html?q=parrella)
