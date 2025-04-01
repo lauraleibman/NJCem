@@ -1,0 +1,33 @@
+---
+title: Sarah Burbank's Dead Project
+layout: about
+permalink: /burbank.html
+credits: true
+---
+
+## Death as Cessation or Passageway in the Old Dutch Churchyard
+
+{% include feature/button.html text="My Images" link="https://lauraleibman.github.io/NJCem/browse.html#Burbank" color="success" %}
+
+*Affliction sore long time her bore, Physicians were in vain; Till God did please that death should cease And ease him of his pain.*
+ - Gravestone of Edward Benton Bowe, 1826
+
+
+The Old Dutch Churchyard in Kingston New York is a notable historical record for its preservation of words and iconography from the 1680’s to today. This has allowed it to archive trends in Christian thought and mourning across centuries. It contains many poetic and personalized inscriptions which comment on a belief in a good afterlife and the futility of mourning. The churchyard is attached to the Old Dutch Church, also known as the First Reformed Protestant Dutch Church, which was founded in 1659. The church has served as one of the centers of Kingston since that point and was the only church in Kingston for 170 years. Kingston was an important city in early America and briefly served as the nation’s first capital before it was burned down in 1777. Examining these stones poignantly demonstrate the variety of philosophies of death as a release, passageway, or cessation held by the residents of the graveyard. 
+
+
+By examining this churchyard, one can observe many of the popular trends in epitaphs from the 18th and 19th century. There is a marked shift in how the burial site is referenced or not referenced in tombstone inscriptions. Earlier gravestones are quite frank about the material aspects of dead bodies and burials. Through the 1790’s the stones are almost formulaic and follow the pattern, “Here lies the body of [Jane Doe] who died [January 1st, 1700].” This type of inscription ensures the reader is very aware of the dead body at the site, sometimes even referencing the interment of their corpse. This phrasing was replaced by inscriptions which followed the pattern “Sacred to the memory of [Jane Doe] Who Departed This Life [January 1st, 1820],” in the early 19th century. This stone pattern references the life of the person rather than their death. Notably the later exception in 1844 is in reference to the deaths of  the “Two Infant Children of Augustus and William Cockburn,” suggesting an element of bluntness accompanying an untimely loss. The phrase “In Memory of” almost always appears alongside “departed this life.” The coupling of these phrases suggests a decreasing focus on the cessation of life, reframing death as a transition to the next one. 
+
+
+Later burial sites often contain poetic inscriptions about heaven and unnecessity of mourning because of Christ’s death and resurrection. These inscriptions never appeared alongside an explicit reference to the person's death, although the two trends did overlap temporally. The differences in epitaph phrasing show an increasing focus on the deceased’s entrance into an eternal afterlife. The later gravestones possess an assurance in the salvation of their loved ones through poetry and floral scripting. They suggest belief in a God who is more loving than wrathful. The tone is much harsher in the unembellished font of the earlier stones, some of them reminding us, “As I am now, so you will be.” These changes in phraseology provide insight into the evolutions of thought on death and eternity in early Protestant America and perhaps the easing of early Puritan anxieties about the elect and the damned.  
+
+
+## Comparison
+
+In my project I focused on the phraseology on epitaphs as a way to understand changing perceptions of death and bodies. I found that as time progressed references to death and the body of the departed came less pervasive while references to heaven, souls, and the memory of the deceased increased. I theorized this could be the result of changing religious rhetoric through the easing of Puritan fears of damnation and increasing belief in the accessibility of salvation and heaven. Ben’s project focused on the tombstones of ministers. As the religious leaders of their communities, a minister’s tombstone can give insight into the broader religious beliefs of a community and even has served as the canvas for a final piece of religious instruction. 
+
+I primarily focused on the period from 1700 to 1830, whereas Ben’s project focuses on the late 19th century. Nonetheless, as the spiritual shepherds of their communities ministers stones will always provide insights into religious views of death and can serve as a continuation of the insight in the Old Dutch Churchyard (ODC) collection. The explicit use of the phrase, “died,” was replaced with euphemisms like, “In Memory Of,” around the 1800’s in the Old Dutch Churchyard. However almost every minister's stone references the death date with the word died. This may be a regional difference or may suggest that ministers felt a greater deal of comfort with frankness about death, perhaps because of assurance about their salvation or repeated exposure to facilitating the “good death,” of the 19th century. 
+
+Similar to the stones of the ODC, some of the minister's stones also feature poetry. The Reverend Royall Wilder’s stone reads, “Go Ye into all the worlds and read the gospel to every creature.” The stone of Lyman Hotchkiss Atwater references, “A life of faith and love, an incorruptible crown.” The stone of Archibald Alexander Hodge discusses, “pledging to reassemble in Heaven… to be present with the Lord”. These epitaphs emphasize missionary work and entrance into heaven, whereas the poetic ODC stone inscriptions are focused on the protection and peace granted to departed Christian souls. Both of these themes emphasize a belief in one’s meeting with God in the afterlife but the ministerial stones emphasize works and the ODC emphasize faith. 
+
+Comparatively these stones indicate a continued cultural desire to be assured of one's destination after death and for families to reflect that assurance in loved one’s epitaphs. While ministers explicitly referenced their missionary work as a sign of virtue and salvation, the lay people referenced their faith in God’s protection. 
